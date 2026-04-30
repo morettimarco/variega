@@ -767,9 +767,31 @@
 /* =================== RESPONSIVE =================== */
 @media (max-width: 800px) {
   .hero { grid-template-columns: 1fr; padding: 2rem 1rem; gap: 2rem; min-height: auto; }
-  .hero__visual { max-width: 320px; margin: 0 auto; }
+  .hero__title { font-size: clamp(2.4rem, 11vw, 8rem); word-break: break-word; }
+  .hero__sub { font-size: 1rem; }
+  .hero__supra { font-size: 0.75rem; letter-spacing: 0.1em; }
+  .hero__visual { max-width: min(320px, 100%); margin: 0 auto; }
+  .hero__sticker {
+    width: 90px; height: 90px;
+    font-size: 0.65rem;
+    padding: 0.4rem;
+    top: -8px; right: 0;
+    border-width: 2px;
+  }
   .about__columns { grid-template-columns: 1fr; gap: 1.5rem; }
-  .dates-strip__inner { grid-template-columns: 1fr; }
+
+  .dates-strip { padding: 3rem 1rem; }
+  .dates-strip__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .date-row {
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem 1rem;
+    padding: 1rem 1.1rem;
+  }
+  .date-row__day { font-size: 1.8rem; }
+  .date-row__where { font-size: 1.2rem; }
+  .date-row__city { font-size: 0.8rem; }
+  .date-row__badge { grid-column: 1 / -1; justify-self: start; }
+
   .show { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
   .contacts { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; }
   .marquee { font-size: 1.3rem; }
