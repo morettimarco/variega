@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Collettivo Variegà — Home</title>
+  <meta name="description" content="Il Collettivo Variegà — stand up comedy e varietà dall'Oltrepò Pavese. Cinque stili diversi, un unico gruppo di mentecatti." />
+  <link rel="icon" href="assets/logo-circle.jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav class="nav" data-screen-label="Nav">
+  <a class="nav__logo" href="index.html">
+    <span class="nav__logo-mark"><img src="assets/logo-circle.jpeg" alt="Variegà logo" /></span>
+    <span>VARIEGÀ</span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collettivo.html">Collettivo</a></li>
+    <li><a href="membri.html">Membri</a></li>
+    <li><a href="date.html">Date &amp; Contatti</a></li>
+  </ul>
+  <a class="nav__ig" href="https://instagram.com/collettivo_variega" target="_blank" rel="noopener">@collettivo_variega</a>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" data-screen-label="Hero">
+  <div class="hero__copy">
+    <span class="hero__supra">Stand-up · Varietà · Oltrepò Pavese</span>
+    <h1 class="hero__title">
+      Il Collettivo<br/>
+      <span class="drip">VARIEGÀ</span>
+    </h1>
+    <p class="hero__sub">
+      Cinque stili diversi racchiusi in un unico gruppo di mentecatti. Comicità surreale, assurda, che cola tipo vernice fresca.
+    </p>
+    <div class="hero__cta">
+      <a href="date.html" class="btn">Prossime date</a>
+      <a href="membri.html" class="btn btn--ghost">Conosci i mentecatti</a>
+    </div>
+  </div>
+  <div class="hero__visual">
+    <img class="hero__logo-big" src="assets/logo-circle.jpeg" alt="Logo Variegà" data-tilt />
+    <div class="hero__sticker" style="padding: 0px; margin: 0px">Dall'Oltrepò<br/>con poco</div>
+  </div>
+</section>
+
+<!-- =================== MARQUEE =================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>VARIEGÀ</span><span class="star">★</span>
+    <span>VARIEGÀ</span><span class="star">★</span>
+    <span>STAND UP</span><span class="star">★</span>
+    <span>VARIETÀ</span><span class="star">★</span>
+    <span>OLTREPÒ PAVESE</span><span class="star">★</span>
+    <span>VARIEGÀ</span><span class="star">★</span>
+    <span>CINQUE MENTECATTI</span><span class="star">★</span>
+    <span>VARIEGÀ</span><span class="star">★</span>
+  </div>
+</div>
+
+<!-- =================== QUOTES WALL =================== -->
+<section class="quotes" data-screen-label="Quotes">
+  <h2 class="quotes__title">Cose che abbiamo detto<br/>e di cui ci siamo pentiti.</h2>
+  <p class="quotes__sub">Estratti dal nostro Instagram · Passa col mouse</p>
+  <div class="quotes__grid">
+    <div class="quote-card"><img src="assets/quote-assunta.jpeg" alt="Quote: donna calabrese" /></div>
+    <div class="quote-card"><img src="assets/quote-arancia.jpeg" alt="Quote: nota agrumata" /></div>
+    <div class="quote-card"><img src="assets/quote-fritto.jpeg" alt="Quote: puzza di fritto" /></div>
+    <div class="quote-card"><img src="assets/quote-infuso.jpeg" alt="Quote: infuso" /></div>
+    <div class="quote-card"><img src="assets/quote-gratis.jpeg" alt="Quote: cose gratis" /></div>
+  </div>
+</section>
+
+<!-- =================== DATES STRIP =================== -->
+<section class="dates-strip" data-screen-label="Date strip">
+  <div class="dates-strip__inner">
+    <h2 class="dates-strip__title">Prossime<br/>date.</h2>
+    <div class="dates-strip__list">
+      <div class="date-row">
+        <div class="date-row__day">09<small>MAG · 2026</small></div>
+        <div>
+          <div class="date-row__where">Sommo</div>
+          <div class="date-row__city">Live show · Oltrepò Pavese</div>
+        </div>
+        <div class="date-row__badge">In casa</div>
+      </div>
+      <div class="date-row">
+        <div class="date-row__day">14<small>MAG · 2026</small></div>
+        <div>
+          <div class="date-row__where">Vigevano</div>
+          <div class="date-row__city">Live show · al completo</div>
+        </div>
+        <div class="date-row__badge">Confermata</div>
+      </div>
+      <div class="date-row">
+        <div class="date-row__day">28<small>GIU · 2026</small></div>
+        <div>
+          <div class="date-row__where">Sanremo</div>
+          <div class="date-row__city">Da confermare</div>
+        </div>
+        <div class="date-row__badge" style="background: var(--c-magenta);">In dubbio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">VARIEGÀ</div>
+    <a class="footer__ig" href="https://instagram.com/collettivo_variega" target="_blank" rel="noopener">@collettivo_variega</a>
+    <div class="footer__meta">© 2026 · Made in Oltrepò<br/>Tutti i mentecatti riservati</div>
+  </div>
+</footer>
+
+<!-- Easter egg -->
+<button class="egg-trigger" aria-label="Easter egg" title="Premi qui (o digita 'drip')">?!</button>
+<div class="egg-overlay" role="dialog" aria-label="Easter egg">
+  <div class="egg-overlay__msg"></div>
+  <div class="egg-overlay__hint">click ovunque per chiudere</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

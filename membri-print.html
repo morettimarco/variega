@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Collettivo Variegà — Membri (Print)</title>
+  <link rel="icon" href="assets/logo-circle.jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="components.css" />
+  <style>
+    /* =================== PRINT-FRIENDLY OVERRIDES =================== */
+    @page {
+      size: A4 portrait;
+      margin: 1cm;
+    }
+
+    /* Hide interactive / animated chrome */
+    .nav,
+    .footer,
+    .egg-trigger,
+    .egg-overlay,
+    #tweaks-root,
+    body::before,
+    .crumple::after {
+      display: none !important;
+    }
+
+    body {
+      background: #F5EFE0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page-head {
+      padding: 1.5rem 2rem 1rem;
+      page-break-after: avoid;
+    }
+    .page-head h1 { font-size: 4rem; }
+
+    /* 2-column grid for print so we get all 5 on a sensible number of pages */
+    .members {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1.2rem !important;
+      padding: 1rem 1.5rem 2rem !important;
+    }
+
+    .member-wrap {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Disable 3D flip — show front face only, image full bleed */
+    .member-card {
+      perspective: none !important;
+      box-shadow: 4px 4px 0 var(--ink) !important;
+      min-height: 0 !important;
+      aspect-ratio: 4/5 !important;
+      transform: none !important;
+    }
+    .member-card__inner {
+      transform: none !important;
+      transform-style: flat !important;
+    }
+    .member-card.is-flipped .member-card__inner {
+      transform: none !important;
+    }
+    .member-card__face--back {
+      display: none !important;
+    }
+    .member-card__face--front {
+      backface-visibility: visible !important;
+      justify-content: flex-start !important;
+      align-items: stretch !important;
+    }
+
+    /* Force poster to fill, regardless of any inline styles */
+    .member-card__poster {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      position: absolute !important;
+      inset: 0 !important;
+    }
+
+    /* Caption: full bio under each card so the PDF carries the info */
+    .member-caption {
+      padding: 0.6rem 0.2rem 0 !important;
+    }
+    .member-card__name {
+      padding: 0 !important;
+      font-size: 1.4rem !important;
+    }
+    .member-card__role {
+      margin-top: 0.3rem !important;
+      font-size: 0.8rem !important;
+    }
+    .member-card__tags {
+      margin-top: 0.5rem !important;
+    }
+    .member-print-bio {
+      margin-top: 0.6rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .member-print-quote {
+      margin-top: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      line-height: 1.2;
+      color: var(--accent);
+      padding-left: 0.7rem;
+      border-left: 4px solid var(--c);
+    }
+
+    @media print {
+      .page-head { padding: 0.5rem 1rem; }
+      .members { padding: 0.5rem 1rem 1rem !important; gap: 1rem !important; }
+      .member-wrap { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-head">
+  <span class="page-head__kicker">5 stili · 5 colori · 5 mentecatti</span>
+  <h1>I <em>membri</em>.</h1>
+</header>
+
+<section class="members">
+
+  <!-- 1. Gianluca -->
+  <div class="member-wrap">
+    <article class="member-card" style="--c: #3F7E8C; --accent: #ED7B1C;">
+      <div class="member-card__inner">
+        <div class="member-card__face member-card__face--front">
+          <img class="member-card__poster" src="assets/membro-gianluca.jpeg" alt="Gianluca Bolsieri" />
+        </div>
+      </div>
+    </article>
+    <div class="member-caption">
+      <div class="member-card__name">Gianluca Bolsieri</div>
+      <div class="member-card__role">Pavese DOC · stand-up</div>
+      <div class="member-card__tags">
+        <span class="member-card__tag">dark humor</span>
+        <span class="member-card__tag">provincia</span>
+        <span class="member-card__tag">autoironia</span>
+      </div>
+      <p class="member-print-quote">"Se una donna calabrese si presenta a un colloquio di lavoro, al 90% è Assunta."</p>
+      <p class="member-print-bio">Pavese DOC — e se lo chiami vogherese ti spara alla nuca. Sul palco porta un umorismo dark e viscerale che sa di cene di famiglia e brutte idee venute bene.</p>
+    </div>
+  </div>
+
+  <!-- 2. Marco -->
+  <div class="member-wrap">
+    <article class="member-card" style="--c: rgb(185,178,133); --accent: #A6356A;">
+      <div class="member-card__inner">
+        <div class="member-card__face member-card__face--front">
+          <img class="member-card__poster" src="assets/membro-marco.jpeg" alt="Marco Moretti" />
+        </div>
+      </div>
+    </article>
+    <div class="member-caption">
+      <div class="member-card__name">Marco Moretti</div>
+      <div class="member-card__role">Pavia · stand-up</div>
+      <div class="member-card__tags">
+        <span class="member-card__tag">bilingue</span>
+        <span class="member-card__tag">storytelling</span>
+        <span class="member-card__tag">osservazionale</span>
+      </div>
+      <p class="member-print-quote">"Ma se difendo qualcuno con una nota agrumata, possiamo dire che sto spezzando un'arancia in suo favore?"</p>
+      <p class="member-print-bio">Si esibisce in italiano e in inglese perché il disagio non ha confini linguistici. Comicità da cecchino: osserva, aspetta il momento giusto, colpisce.</p>
+    </div>
+  </div>
+
+  <!-- 3. Giulio -->
+  <div class="member-wrap">
+    <article class="member-card" style="--c: #8B7E96; --accent: #C7B33C;">
+      <div class="member-card__inner">
+        <div class="member-card__face member-card__face--front">
+          <img class="member-card__poster" src="assets/membro-giulio.jpeg" alt="Giulio Oldrati" />
+        </div>
+      </div>
+    </article>
+    <div class="member-caption">
+      <div class="member-card__name">Giulio Oldrati</div>
+      <div class="member-card__role">Pavia · stand-up</div>
+      <div class="member-card__tags">
+        <span class="member-card__tag">surreale</span>
+        <span class="member-card__tag">absurdismo</span>
+        <span class="member-card__tag">timing</span>
+      </div>
+      <p class="member-print-quote">"Indagine dell'OCSE rivela: sì certo, un diamante è per sempre, ma anche la puzza di fritto non scherza."</p>
+      <p class="member-print-bio">Comicità surrealista con un timing che non perdona. Il 90% delle sue battute le hanno già sentite tutti — ma fanno ridere lo stesso ogni volta.</p>
+    </div>
+  </div>
+
+  <!-- 4. Stefano -->
+  <div class="member-wrap">
+    <article class="member-card" style="--c: rgb(42,160,90); --accent: #2D5F2D;">
+      <div class="member-card__inner">
+        <div class="member-card__face member-card__face--front">
+          <img class="member-card__poster" src="assets/membro-stefano.jpeg" alt="Stefano Scagnelli" />
+        </div>
+      </div>
+    </article>
+    <div class="member-caption">
+      <div class="member-card__name">Stefano Scagnelli</div>
+      <div class="member-card__role">Milano · stand-up</div>
+      <div class="member-card__tags">
+        <span class="member-card__tag">dark</span>
+        <span class="member-card__tag">surreale</span>
+        <span class="member-card__tag">imprevedibile</span>
+      </div>
+      <p class="member-print-quote">"Vedo un infuso e penso subito a te."</p>
+      <p class="member-print-bio">Battute costruite come diagnosi differenziali: partono da un'osservazione banale e arrivano dove nessuno si aspetta. Specializzato in deduzione illogica e wordplay chirurgico.</p>
+    </div>
+  </div>
+
+  <!-- 5. Massimiliano -->
+  <div class="member-wrap">
+    <article class="member-card" style="--c: rgb(217,173,80); --accent: #3F7E8C;">
+      <div class="member-card__inner">
+        <div class="member-card__face member-card__face--front">
+          <img class="member-card__poster" src="assets/membro-massimiliano.jpeg" alt="Massimiliano Sonsogno" />
+        </div>
+      </div>
+    </article>
+    <div class="member-caption">
+      <div class="member-card__name">Massimiliano Sonsogno</div>
+      <div class="member-card__role">Genova · stand-up</div>
+      <div class="member-card__tags">
+        <span class="member-card__tag">autore</span>
+        <span class="member-card__tag">musica e voce</span>
+        <span class="member-card__tag">stand-up narrativa</span>
+      </div>
+      <p class="member-print-quote">"'Le cose migliori della vita sono gratis.' Disse qualcuno che non si è mai drogato."</p>
+      <p class="member-print-bio">Ha scritto il romanzo <em>Briscola chiamata</em> e porta sul palco uno stand-up che mescola narrazione, piano e voce in uno spettacolo — <em>Sandro Salumi Show</em>.</p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  // Wait for fonts + images, then trigger print
+  (async () => {
+    try {
+      if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    } catch (e) {}
+    const imgs = Array.from(document.images);
+    await Promise.all(imgs.map(img =>
+      img.complete ? Promise.resolve() :
+        new Promise(res => { img.onload = img.onerror = res; })
+    ));
+    setTimeout(() => window.print(), 500);
+  })();
+</script>
+
+</body>
+</html>
