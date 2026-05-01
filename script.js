@@ -28,6 +28,7 @@
     "L'INFUSO\nVI SALUTA",
     "ASSUNTA\nPRESENTE",
     "DROGATEVI\nDI COMICITÀ",
+    "LE MONANCHE USANO\nL'ASCENSUORE",
   ];
   const msgEl = overlay.querySelector('.egg-overlay__msg');
 
