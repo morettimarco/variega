@@ -687,6 +687,12 @@
 .gallery__cell:hover { transform: scale(1.03) rotate(1deg); z-index: 2; }
 .gallery__cell--tall { grid-row: span 2; }
 .gallery__cell--wide { grid-column: span 2; }
+.gallery__cell > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .gallery__cell-bg {
   position: absolute;
   inset: 0;
