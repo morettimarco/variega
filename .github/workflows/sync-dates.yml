@@ -1,0 +1,44 @@
+name: Sync dates from Google Sheet
+
+on:
+  schedule:
+    # Hourly. GitHub may delay scheduled runs by a few minutes under load.
+    - cron: '0 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-dates.mjs'
+      - '.github/workflows/sync-dates.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-dates
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Render dates from sheet
+        run: node scripts/sync-dates.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -z "$(git status --porcelain date.html index.html)" ]]; then
+            echo "No date changes."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add date.html index.html
+          git commit -m "chore(dates): sync from sheet"
+          git push
