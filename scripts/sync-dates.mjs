@@ -82,7 +82,7 @@ function renderShow(e) {
   const meta = [e.ora, e.indirizzo].filter(Boolean).join(' · ');
   const cta = e.biglietti
     ? `<a href="${escapeHtml(e.biglietti)}" target="_blank" rel="noopener" class="show__cta">Biglietti →</a>`
-    : `<a href="${IG_URL}" target="_blank" rel="noopener" class="show__cta">Info →</a>`;
+    : `<span class="show__cta">Ingresso libero</span>`;
   return `  <div class="show">
     <div class="show__date">
       <span class="day">${day}</span>
