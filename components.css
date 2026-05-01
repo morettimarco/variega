@@ -533,10 +533,26 @@
   transition: transform 0.2s;
 }
 .show:hover { transform: translateX(8px); }
-.show:nth-child(1) { background: var(--c-teal); color: var(--paper); }
-.show:nth-child(2) { background: var(--c-yellow); }
-.show:nth-child(1) .show__city,
-.show:nth-child(1) .show__where small { color: var(--paper); }
+
+/* Caotic colour rotation across the website palette (cycles every 8) */
+.show:nth-child(8n+1) { background: var(--c-teal);       color: var(--paper); }
+.show:nth-child(8n+2) { background: var(--c-yellow); }
+.show:nth-child(8n+3) { background: var(--c-magenta);    color: var(--paper); }
+.show:nth-child(8n+4) { background: var(--c-green); }
+.show:nth-child(8n+5) { background: var(--c-purple);     color: var(--paper); }
+.show:nth-child(8n+6) { background: var(--c-mustard); }
+.show:nth-child(8n+7) { background: var(--c-green-deep); color: var(--paper); }
+.show:nth-child(8n+8) { background: var(--brand-orange); color: var(--ink); }
+
+/* Muted helper text turns paper-coloured on the dark backgrounds */
+.show:nth-child(8n+1) .show__city,
+.show:nth-child(8n+1) .show__where small,
+.show:nth-child(8n+3) .show__city,
+.show:nth-child(8n+3) .show__where small,
+.show:nth-child(8n+5) .show__city,
+.show:nth-child(8n+5) .show__where small,
+.show:nth-child(8n+7) .show__city,
+.show:nth-child(8n+7) .show__where small { color: var(--paper); }
 
 .show__date {
   text-align: center;
